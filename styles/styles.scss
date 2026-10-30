@@ -1,0 +1,13 @@
+
+@use "fonts";
+@use "media";
+@use "mixins";
+@use "variables";
+@use "globals";
+@use "normilise";
+
+
+@use "./block/header";
+@use "./block/main";
+@use "./block/footer";
+
