@@ -1,0 +1,83 @@
+
+
+@use "sass:math";
+
+// Fluid Typography
+@mixin fluid-text($min-size, $layout-size, $layout-width: 1440px) {
+  $min-vw: 320px;
+  $max-vw: 2560px;
+
+  // 1. Проверка единиц измерения
+  @if not math.compatible($min-size, $layout-size) or
+      not math.compatible($min-size, $min-vw) or
+      not math.compatible($layout-width, $min-vw) {
+    @error "Use compatible length units for all arguments.";
+  }
+
+  // 2. Проверка ширины макета
+  @if $layout-width <= $min-vw or $layout-width > $max-vw {
+    @error "$layout-width must be > 320px and <= 2560px.";
+  }
+
+  // 3. Проверка размеров шрифта
+  @if $min-size <= 0px or $layout-size < $min-size {
+    @error "Font sizes must be positive and layout-size >= min-size.";
+  }
+
+  // 4. Коэффициент роста
+  $slope: math.div(
+     $layout-size - $min-size,
+     $layout-width - $min-vw
+  );
+
+  // 5. Точка пересечения
+  $intersection: $min-size - $slope * $min-vw;
+
+  // 6. Автоматический максимум
+  $max-size: $min-size + $slope * ($max-vw - $min-vw);
+
+  // 7. Fluid Typography
+  font-size: clamp(
+     $min-size,
+     calc($intersection + $slope * 100vw),
+     $max-size
+  );
+}
+
+@mixin reset-link{
+  color: inherit;
+
+  &,&:hover{
+    text-decoration: none;
+  }
+}
+
+@mixin reset-button{
+  padding: 0;
+  background-color: transparent;
+  border: none;
+}
+
+@mixin flex-center($isInline: false)
+{
+  @if $isInline{
+    display: inline-flex;
+  } @else{
+    display: flex;
+  }
+
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin abs-center{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+}
+
+@mixin square($size){
+  width: $size;
+  aspect-ratio: 1;
+}

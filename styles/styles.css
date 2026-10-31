@@ -1,4 +1,91 @@
 @charset "UTF-8";
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("fonts/JetBrainsMono-Regular.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("fonts/JetBrainsMono-Medium.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: "SpaceGrotesk";
+  src: url("fonts/SpaceGrotesk-Regular.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "SpaceGrotesk";
+  src: url("fonts/SpaceGrotesk-Medium.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+:root {
+  --color-bg-main: #121315;
+  --color-accent-gold: #C5A059;
+  --color-accent-wine: #7A1C28;
+  --color-light-grey: #898989;
+  --border: 1px solid var(--color-accent-wine);
+  --border-radius: 14px;
+  --border-radius-small: 7px;
+  --border-radius-card: 45px;
+  --shadow: 0 5px 0 0 var(--color-accent-wine);
+  --font-family-title: "Space Grotesk", sans-serif;
+  --font-family-base: "JetBrains Mono", sans-serif;
+  --section-padding: 70px;
+  --input-height: 60px;
+  --button-height: 68px;
+  --transition-duration: 0.2s;
+}
+
+body {
+  font-size: clamp(16px, 15.4285714286px + 0.1785714286vw, 20px);
+  font-family: var(--font-family-base);
+  font-weight: 400;
+  line-height: 1.28;
+  color: #C9CBC8;
+  background-color: var(--color-bg-main);
+}
+
+a, button, input, textarea, svg * {
+  transition-duration: var(--transition-duration);
+}
+
+a {
+  color: inherit;
+}
+a, a:hover {
+  text-decoration: none;
+}
+
+h1, h2, h3, h4 {
+  font-weight: 500;
+  font-family: var(--font-family-title);
+}
+
+h1 {
+  font-size: clamp(43px, 38.1428571429px + 1.5178571429vw, 77px);
+}
+
+h2 {
+  font-size: clamp(36px, 34.8571428571px + 0.3571428571vw, 44px);
+}
+
+h3 {
+  font-size: clamp(26px, 24.8571428571px + 0.3571428571vw, 34px);
+}
+
+h4 {
+  font-size: clamp(18px, 17.4285714286px + 0.1785714286vw, 22px);
+}
+
 /**
   Нормализация блочной модели
  */
@@ -200,6 +287,44 @@ svg * {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+.container {
+  width: calc(100% - 2 * clamp(1.25rem, 7.5vw - 0.5rem, 11.5rem));
+  max-width: none;
+  margin-inline: auto;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  border: 0 !important;
+  padding: 0 !important;
+  white-space: nowrap !important;
+  clip-path: inset(100%) !important;
+  clip: rect(0 0 0 0) !important;
+  overflow: hidden !important;
+}
+
+@media (max-width: 768px) {
+  .hidden-mobile {
+    display: none !important;
+  }
+}
+
+.visible-mobile {
+  display: none;
+}
+@media (max-width: 768px) {
+  .visible-mobile {
+    display: inline-block !important;
+  }
+}
+
+.HEADER--Wrapper {
+  display: flex;
+  align-items: center;
 }
 
 /*# sourceMappingURL=styles.css.map */

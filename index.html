@@ -1,18 +1,145 @@
 <!doctype html>
-<html lang="en">
+<html lang="ru">
 <head>
    <meta charset="UTF-8">
-   <meta name="viewport"
-         content="width=device-width,  initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <meta
+           name="description"
+           content="Создание современных сайтов и адаптивная вёрстка по макетам Figma. Продуманный интерфейс, аккуратная реализация и внимание к деталям.">
 
    <link rel="stylesheet"
          href="./styles/styles.css">
 
-   <title>Noctra</title>
+   <title>Noctra — адаптивная вёрстка и разработка сайтов</title>
 
 </head>
 
 <body>
+
+   <header class="HEADER">
+
+       <div class="HEADER--Wrapper container">
+
+          <a class="HEADER--Logo">
+             <svg  width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-moon"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454l0 .008" /></svg>
+
+             <span>Noctra</span>
+          </a>
+
+          <nav class="HEADER--Navigation">
+
+             <ul class="Navigation--list">
+
+                <li class="Nav-list--item">
+
+                   <a class="Dekstop_link" href="">О нас</a>
+                </li>
+
+                <li class="Nav-list--item">
+
+                   <a class="Dekstop_link" href="">Сервис</a>
+                </li>
+
+                <li class="Nav-list--item">
+
+                   <a class="Dekstop_link" href=""> Стандарты </a>
+                </li>
+
+                <li class="Nav-list--item">
+
+                   <a class="Dekstop_link" href=""> Тандем </a>
+                </li>
+
+                <li class="Nav-list--item">
+
+                   <a class="Dekstop_link" href=""> Контакты </a>
+                </li>
+
+
+                <li class="Nav-list--item hidden-mobile">
+
+                      <a class="Dekstop_link button" href="">Рассчитать стоймость</a>
+
+                </li>
+
+                <!--    Мобильные Устройства            -->
+
+                <li class="Nav-list--item">
+
+                   <button class="Burger_menu" type="button" onclick="MobileOverlay.showModal()">
+
+                      <svg width="26" height="18" viewBox="0 0 26 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                         <path d="M1 1H25" stroke-width="2" stroke-linecap="round" stroke="black"/>
+                         <path d="M1 9H25" stroke-width="2" stroke-linecap="round" stroke="black"/>
+                         <path d="M1 17H25" stroke-width="2" stroke-linecap="round" stroke="black"/>
+                      </svg>
+
+                      <span class="visually-hidden">Открытие навигационного окна</span>
+                   </button>
+
+
+                </li>
+
+             </ul>
+
+          </nav>
+
+       </div>
+
+   </header>
+
+
+   <dialog class="Mobile_Overlay" id="MobileOverlay">
+
+      <form method="dialog"
+            class="Mobile_Overlay--close_button">
+
+         <button> Закрыть диалоговое окно?
+
+            <span class="visually-hidden">Закрытие навигационного окна</span>
+         </button>
+
+         <div class="Mobile_Overlay--body">
+
+            <ul class="Mobile_Overlay--list">
+
+               <li class="Mob-Over-list--item">
+                  <a href=""
+                     class="Mob-Over--link"> О нас </a>
+               </li>
+
+               <li class="Mob-Over-list--item">
+                  <a href=""
+                     class="Mob-Over--link"> Сервис </a>
+               </li>
+
+               <li class="Mob-Over-list--item">
+                  <a href=""
+                     class="Mob-Over--link"> Стандарты </a>
+               </li>
+
+               <li class="Mob-Over-list--item">
+                  <a href=""
+                     class="Mob-Over--link"> Тандем </a>
+               </li>
+
+               <li class="Mob-Over-list--item">
+                  <a href=""
+                     class="Mob-Over--link"> Контакты </a>
+               </li>
+            </ul>
+
+         </div>
+      </form>
+
+
+   </dialog>
+
+
+   <main class="MAIN"></main>
+
+   <footer class="FOOTER"></footer>
    
 </body>
 

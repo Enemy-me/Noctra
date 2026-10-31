@@ -1,0 +1,25 @@
+
+
+@mixin media($break) {
+
+  @media (max-width: $break) {
+
+    @content;
+
+  }
+
+}
+
+
+@mixin hover{
+
+  @media (hover:hover) {
+    @content;
+  }
+
+  @media (hover:none){
+    &:active{
+      @content;
+    }
+  }
+}

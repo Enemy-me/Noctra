@@ -1,1 +1,44 @@
 
+:root {
+
+  // ЦВЕТА
+
+  --color-bg-main: #121315;
+
+  --color-accent-gold: #C5A059;
+  --color-accent-wine: #7A1C28;
+
+
+  --color-light-grey: #898989;
+
+  // РАМКИ
+
+  --border: 1px solid var(--color-accent-wine);
+  --border-radius: 14px;
+
+  --border-radius-small: 7px;
+  --border-radius-card: 45px;
+
+  // Тени
+
+  --shadow: 0 5px 0 0 var(--color-accent-wine);
+
+  // Шрифты
+
+  --font-family-title: "Space Grotesk", sans-serif;
+  --font-family-base: "JetBrains Mono", sans-serif;
+
+  // Отступы
+
+  --section-padding: 70px;
+
+  // Высота
+
+  --input-height: 60px;
+  --button-height: 68px;
+
+  // Остальное
+
+  --transition-duration: 0.2s;
+
+}

@@ -1,0 +1,35 @@
+
+@use "abstracts" as *;
+
+  .container {
+    width: calc(100% - 2 * clamp(1.25rem, 7.5vw - 0.5rem, 11.5rem));
+    max-width: none;
+    margin-inline: auto;
+  }
+
+  .visually-hidden {
+    position: absolute !important;
+    width: 1px  !important;
+    height: 1px  !important;
+    margin: -1px  !important;
+    border: 0  !important;
+    padding: 0  !important;
+    white-space: nowrap  !important;
+    clip-path: inset(100%)  !important;
+    clip: rect(0 0 0 0)  !important;
+    overflow: hidden  !important;
+  }
+
+  .hidden-mobile{
+    @include media(768px) {
+      display: none !important;
+    }
+  }
+
+  .visible-mobile{
+    display: none;
+
+    @include media(768px) {
+      display: inline-block !important; // показываем на экранах меньше 768px
+    }
+  }
