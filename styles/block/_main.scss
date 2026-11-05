@@ -1,0 +1,69 @@
+@use "../abstracts" as *;
+
+
+
+.accent-text{
+  color: var(--color-accent-gold);
+}
+
+.accent-text__prefix{
+  color: var(--color-Ash);
+}
+
+.Manifest--title{
+  color: var(--color-accent-wine)
+}
+
+.Manifest{
+  display: grid;
+  grid-template-columns: [content] 1fr [logo] 1fr;
+
+  margin-bottom: 70px;
+}
+
+  .Manifest--Block{
+
+    display: inline-flex;
+    flex-direction: column;
+
+    justify-content: start;
+    align-items: start;
+
+    row-gap: 35px;
+
+    @include tablet (1050px){
+      row-gap: 15px !important;
+    }
+
+
+
+  .Manifest--title{
+   font-weight: 500;
+   line-height: 1.2;
+    @include fluid-text(25px,40px);
+
+  }
+
+  .Manifest--Content{
+    
+    @include fluid-text(10px,24px);
+    line-height: 1.75;
+
+  }
+
+
+    .Manifest--Button_Contact_us{
+      @include tablet(1050px)
+      {
+        padding: 5px 5px;
+      }
+    }
+
+
+
+
+
+
+
+}
+

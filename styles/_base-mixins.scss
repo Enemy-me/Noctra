@@ -1,0 +1,120 @@
+
+@use "sass:math";
+@use "sass:string";
+
+
+// ДИНАМИЧЕСКИЙ FONT-SIZE
+@mixin fluid-text($min-size, $layout-size, $layout-width: 1440px) {
+  $min-vw: 430px;
+  $max-vw: 2560px;
+
+  // 1. Проверка единиц измерения
+  @if not math.compatible($min-size, $layout-size) or
+      not math.compatible($min-size, $min-vw) or
+      not math.compatible($layout-width, $min-vw) {
+    @error "Use compatible length units for all arguments.";
+  }
+
+  // 2. Проверка ширины макета
+  @if $layout-width <= $min-vw or $layout-width > $max-vw {
+    @error "$layout-width must be > 320px and <= 2560px.";
+  }
+
+  // 3. Проверка размеров шрифта
+  @if $min-size <= 0px or $layout-size < $min-size {
+    @error "Font sizes must be positive and layout-size >= min-size.";
+  }
+
+  // 4. Коэффициент роста
+  $slope: math.div(
+     $layout-size - $min-size,
+     $layout-width - $min-vw
+  );
+
+  // 5. Точка пересечения
+  $intersection: $min-size - $slope * $min-vw;
+
+  // 6. Автоматический максимум
+  $max-size: $min-size + $slope * ($max-vw - $min-vw);
+
+  // 7. Fluid Typography
+  font-size: clamp(
+     $min-size,
+     calc($intersection + $slope * 100vw),
+     $max-size
+  );
+}
+
+
+//  ОТСТУПЫ
+
+// Приватные вспомогательные функции (наверху файла)
+@function _strip-unit($value) {
+  @return math.div($value, ($value * 0 + 1));
+}
+
+@function _round-dec($number, $digits: 4) {
+  $multiplier: 1;
+  @if $digits > 0 {
+    @for $i from 1 through $digits {
+      $multiplier: $multiplier * 10;
+    }
+  }
+  @return math.div(math.round($number * $multiplier), $multiplier);
+}
+
+// Сам универсальный миксин
+@mixin Padding(
+  $property,
+  $min,
+  $desktop,
+  $max: null,
+  $min-screen: 320px,
+  $desktop-screen: 1440px,
+  $max-screen: 2560px
+) {
+  $resolved-max: if($max != null, $max, $desktop);
+
+  $p: _strip-unit($min);
+  $m: _strip-unit($desktop);
+  $x: _strip-unit($resolved-max);
+
+  $f: _strip-unit($min-screen);
+  $vm: _strip-unit($desktop-screen);
+  $vmax: _strip-unit($max-screen);
+
+  @if $p > $m or $m > $x {
+    @error "Sizes must satisfy min <= desktop <= max";
+  }
+
+  @if $f >= $vm or $vm >= $vmax {
+    @error "Screen widths must be strictly increasing";
+  }
+
+  $kA: math.div($m - $p, $vm - $f);
+  $cA: $p - ($kA * $f);
+
+  $kB: math.div($x - $m, $vmax - $vm);
+  $cB: $m - ($kB * $vm);
+
+  $func: if($kA > $kB, "min", "max");
+
+  $p-rem: math.div($p, 16) * 1rem;
+  $x-rem: math.div($x, 16) * 1rem;
+
+  $vw-a: _round-dec($kA * 100, 4);
+  $vw-b: _round-dec($kB * 100, 4);
+
+  $abs-cA: if($cA < 0, $cA * -1, $cA);
+  $abs-cB: if($cB < 0, $cB * -1, $cB);
+
+  $rem-a: _round-dec(math.div($abs-cA, 16), 4);
+  $rem-b: _round-dec(math.div($abs-cB, 16), 4);
+
+  $val-a: if($cA < 0, "#{$vw-a}vw - #{$rem-a}rem", "#{$vw-a}vw + #{$rem-a}rem");
+  $val-b: if($cB < 0, "#{$vw-b}vw - #{$rem-b}rem", "#{$vw-b}vw + #{$rem-b}rem");
+
+  #{$property}: string.unquote(
+     "clamp(#{$p-rem}, #{$func}(#{$val-a}, #{$val-b}), #{$x-rem})"
+  );
+}

@@ -10,6 +10,36 @@
 
 }
 
+@mixin dekstop($break) {
+
+  @media (max-width: $break) {
+
+    @content;
+
+  }
+
+}
+
+@mixin tablet($break) {
+
+  @media (max-width: $break) {
+
+    @content;
+
+  }
+
+}
+
+@mixin mobile($break) {
+
+  @media (max-width: $break) {
+
+    @content;
+
+  }
+
+}
+
 
 @mixin hover{
 

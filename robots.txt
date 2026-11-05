@@ -1,0 +1,7 @@
+User-agent: yandex
+Allow: /
+
+User-agent: googlebot
+Allow: /
+
+Sitemap: https://enemy-me.github.io/Noctra/sitemap.xml
