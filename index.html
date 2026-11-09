@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="ru">
+
 <head>
 
    <meta name="author" content="Zeus">
@@ -49,7 +50,7 @@
          href="./styles/styles.css">
 
    <link rel="icon"
-         href="./svg/NOCTRA--ICON.svg">
+         href="styles/svg/NOCTRA--ICON.svg">
 
 </head>
 
@@ -186,13 +187,13 @@
 
             <div class="Manifest--Block">
 
-               <h1 class="Manifest--title">
+               <h3 class="Manifest--title">
                   ЭСТЕТИКА. <span class="accent-text">СКОРОСТЬ</span> <span class="accent-text__prefix">и </span> АРХИТЕКТУРА
 
                   <span class="accent-text__prefix"> c </span> <span class="accent-text"> Бескомпромиссной  ТОЧНОСТЬЮ.</span>
-               </h1>
+               </h3>
 
-               <img class="Manifest--Image visible-mobile" src="/images/Manifest.webp" alt="Стоический череп агентства" loading="lazy">
+               <img class="Manifest--Image visible-mobile" fetchpriority="high" src="/images/Manifest.webp" alt="Стоический череп агентства"  width="857">
 
                <p class="Manifest--Content">
                   Мы продвигаем амбициозные бренды. При помощи высокоточного технического SEO и целевых PPC-моделей до продвинутых контент-стратегий — созданных для максимальной отдачи.
@@ -207,19 +208,19 @@
 
             <div class="hidden-mobile">
 
-               <img class="Manifest--Image" src="/images/Manifest.webp" alt="Стоический череп агентства" loading="lazy">
+               <img class="Manifest--Image" fetchpriority="high" src="/images/Manifest.webp" alt="Стоический череп агентства"  width="857" >
 
             </div>
 
          </section>
 
-         <!--<section class="Brands" aria-labelledby="brands-title">
+         <div class="Brands" >
 
             <h2  class="visually-hidden">Бренды, которые нам доверяют</h2>
 
-            <ul class="Brands&#45;&#45;list">
+            <ul class="Brands--list">
 
-               <li class="Brands&#45;&#45;list&#45;&#45;item">
+               <li class="Brands--list--item">
                   <span class="visually-hidden">Amazon</span>
 
                   <svg aria-hidden="true" width="125" height="48" viewBox="0 0 125 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -237,7 +238,7 @@
 
                </li>
 
-               <li class="Brands&#45;&#45;list&#45;&#45;item">
+               <li class="Brands--list--item">
                   <span class="visually-hidden">Hubble</span>
 
                   <svg aria-hidden="true" width="127" height="48" viewBox="0 0 127 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -254,7 +255,7 @@
 
                </li>
 
-               <li class="Brands&#45;&#45;list&#45;&#45;item">
+               <li class="Brands--list--item">
                   <span class="visually-hidden">HubSpot</span>
 
                   <svg aria-hidden="true" width="129" height="48" viewBox="0 0 129 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -277,7 +278,7 @@
 
                </li>
 
-               <li class="Brands&#45;&#45;list&#45;&#45;item">
+               <li class="Brands--list--item">
 
                   <span class="visually-hidden">Notion</span>
 
@@ -295,7 +296,7 @@
 
                </li>
 
-               <li class="Brands&#45;&#45;list&#45;&#45;item">
+               <li class="Brands--list--item">
 
                   <span class="visually-hidden">Netflix</span>
 
@@ -314,7 +315,7 @@
 
                </li>
 
-               <li class="Brands&#45;&#45;list&#45;&#45;item">
+               <li class="Brands--list--item">
                   <span class="visually-hidden">Zoom</span>
 
                   <svg aria-hidden="true" width="111" height="48" viewBox="0 0 111 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -333,12 +334,122 @@
 
             </ul>
 
-         </section>-->
+         </div>
+
+      </section>
+
+      <section class="SERVICES container">
+
+         <h2 class="visually-hidden"> Наши услуги </h2>
+
+         <div class="Services--Hero">
+             <h2> <mark class="Services--Title"> Сервис </mark> </h2>
+             <p class="Services--Description">Мы —<span lang="en"> digital</span>-агентство, которое выводит бизнес на новый уровень в сети.  Наш арсенал услуг для вашего роста и развития включает:</p>
+         </div>
+
+         <div class="Services--Content">
+
+            <ul class="Services--list">
+
+               <li class="Services--Item">
+                  <div class="Card--Wrapper">
+                     <mark class="Card--Title Gold-Red">
+                        Поисковая Оптимизация <span lang="en"> (SEO) </span>
+                     </mark>
+
+                     <p class="Card--description hidden-mobile">Узнать больше</p>
+                  </div>
+
+                  <img src="/styles/svg/Services/SEO1.svg"
+                       alt="
+                         Поисковая оптимизация Сео»"
+                       class="Card--Image">
+               </li>
+
+               <li class="Services--Item">
+                  <div class="Card--Wrapper">
+
+                     <mark class="Card--Title Red-Gold">
+                        Контекстная реклама
+                     </mark>
+
+                     <p class="Card--description hidden-mobile">Узнать больше</p>
+                  </div>
+
+                  <img src="/styles/svg/Services/Click2.svg"
+                       alt="Контекстная реклама"
+                       class="Card--Image">
+               </li>
+
+               <li class="Services--Item">
+                  <div class="Card--Wrapper">
+
+                     <mark class="Card--Title Gold-Red">
+                        Социальные сети и Маркетинг
+                     </mark>
+
+                     <p class="Card--description hidden-mobile">Узнать больше</p>
+                  </div>
+
+                  <img src="/styles/svg/Services/Social-Media3.svg"
+                       alt="Социальные сети и Маркетинг"
+                       class="Card--Image">
+               </li>
+
+               <li class="Services--Item">
+                  <div class="Card--Wrapper">
+                     <mark class="Card--Title Red-Gold">
+                        Разработка
+                     </mark>
+
+                     <p class="Card--description hidden-mobile">Узнать больше</p>
+                  </div>
+
+                  <img src="/styles/svg/Services/Coding4.svg"
+                       alt="Разработка"
+                       class="Card--Image">
+               </li>
+
+               <li class="Services--Item">
+                  <div class="Card--Wrapper">
+                     <mark class="Card--Title Gold-Red">
+                        Создание Контента
+                     </mark>
+
+                     <p class="Card--description hidden-mobile">Узнать больше</p>
+                  </div>
+
+                  <img src="/styles/svg/Services/Content-Creation5.svg"
+                       alt="Создание Контента"
+                       class="Card--Image">
+               </li>
+
+               <li class="Services--Item">
+                  <div class="Card--Wrapper">
+                     <mark class="Card--Title Red-Gold">
+                       Аналитика и Метрики
+                     </mark>
+
+                     <p class="Card--description hidden-mobile">Узнать больше</p>
+                  </div>
+
+                  <img src="/styles/svg/Services/Analytics6.svg"
+                       alt="Аналитика и Метрики"
+                       class="Card--Image">
+               </li>
+
+            </ul>
+
+         </div>
 
       </section>
 
 
+
+
    </main>
+
+
 
    <footer class="FOOTER"></footer>
    

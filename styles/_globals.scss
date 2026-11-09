@@ -3,8 +3,6 @@
 
 body{
 
-  @include fluid-text(16px,18px);
-
   font-family: var(--font-family-base);
   font-weight: 400;
 
@@ -15,8 +13,22 @@ body{
   color: var(--color-Ash);
   background-color: var(--color-bg-main);
 
+
   scroll-behavior: smooth;
 
+}
+
+section{
+  margin-bottom: clamp(
+     1.5625rem,
+     min(-5.938rem + 15.625vw, 7.321rem + 0.893vw),
+     8.75rem
+  );
+}
+
+p{
+  @include fluid-text(16px,18px);
+  line-height: 1.2;
 }
 
 
@@ -33,9 +45,8 @@ a{
    border-radius: var(--border-radius);
    border: 1px solid var(--color-accent-wine);
 
-
    background-color: var(--color-accent-gold);
-   height: var(--button-height);
+   cursor: pointer;
 
 
 
@@ -53,7 +64,11 @@ a{
       background-color: var(--color-accent-gold);
       transition-duration: var(--transition-duration);
 
+      transform: translateY(-3px);
+
     }
+
+
 
   }
 

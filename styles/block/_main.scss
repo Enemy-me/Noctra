@@ -19,6 +19,14 @@
   grid-template-columns: [content] 1fr [logo] 1fr;
 
   margin-bottom: 70px;
+
+  @include mobile (768px){
+    grid-template-columns: 1fr;
+    margin-bottom: 60px ;
+
+  }
+
+
 }
 
   .Manifest--Block{
@@ -26,13 +34,12 @@
     display: inline-flex;
     flex-direction: column;
 
-    justify-content: start;
     align-items: start;
 
     row-gap: 35px;
 
     @include tablet (1050px){
-      row-gap: 15px !important;
+      row-gap: 15px ;
     }
 
 
@@ -40,30 +47,167 @@
   .Manifest--title{
    font-weight: 500;
    line-height: 1.2;
-    @include fluid-text(25px,40px);
+    @include fluid-text(20px,40px);
 
   }
 
   .Manifest--Content{
     
-    @include fluid-text(10px,24px);
-    line-height: 1.75;
+    @include fluid-text(16px,24px);
+    line-height: 1.4;
+    padding-right: 25px;
+
+    @include tablet(1050px){
+      padding-bottom: 10px;
+    }
+
+    @include mobile(768px){
+      display: block;
+      padding-bottom: 30px;
+    }
 
   }
 
 
     .Manifest--Button_Contact_us{
+
+      //transform: scale(-3,-1);
+      //transform: rotate(10000000000000000000000000000000000000000000000000000000turn);
+      //transform: skew(1000deg,100deg);
+      //transform: translate(1000px) scale(2) skew(1000deg) ;
+
+     /* translate:
+      scale
+      rotate*/
+
+      //transform-origin: right;
+
+
       @include tablet(1050px)
       {
         padding: 5px 5px;
+        height: 50px;
+      }
+
+      &:active {
+        transition-duration: var(--transition-duration);
+
+         color: currentColor;
+          filter: drop-shadow(0 0 20px var(--color-accent-gold));
+
+      }
+
+      @include mobile(768px){
+        width: 100%;
+        max-width: 390px;
+
+        margin-inline: auto;
       }
     }
 
+    .Manifest--Image{
+      @include mobile(768px){
+        margin-bottom: 10px;
+      }
 
-
-
-
+    }
 
 
 }
+
+
+  .Brands{
+
+    .Brands--list{
+      display: flex;
+      flex-wrap: wrap;
+
+      justify-content: space-between;
+      align-items: center;
+
+      column-gap: 35px;
+
+      @include tablet(1082px)
+      {
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+
+        row-gap: 20px;
+
+      }
+
+      @include mobile(510px){
+        grid-template-columns: repeat(2,1fr);
+        flex-direction: column;
+
+      }
+
+      .Brands--list--item{
+        display: flex;
+        justify-content: center;
+      }
+    }
+
+  }
+
+
+
+  .Services--Hero{
+
+    display: inline-flex;
+    max-width: clamp(50rem, -2.941rem + 58.82vw, 68.75rem);
+
+    justify-content: start;
+    align-items: center;
+
+    @include mobile(768px)
+    {
+      flex-direction: column;
+    }
+
+    @include Padding(column-gap,30px,40px,null,410px);
+
+    .Services--Title{
+      background-color: var(--color-accent-wine);
+      color: var(--color-accent-gold);
+
+      @include fluid-text(35px,40px);
+
+      border-radius: var(--border-radius) + 20px;
+    }
+
+    .Services--Description{
+      @include fluid-text(16px,24px);
+    }
+
+
+  }
+
+
+  .Services--Content{
+
+    .Card--Title{
+      @include fluid-text(26px,30px);
+
+      font-weight: 500;
+      line-height: var(--line-height-normal);
+    }
+
+    .Card--description{
+      position: relative;
+
+      &::before{
+        content: "";
+        position: absolute;
+
+        display: block;
+        background-image: url("/styles/svg/Services--Arrow--1.svg");
+
+     /*   height: 1.25em;
+        width: 1.25em;*/
+
+      }
+
+    }
+  }
 

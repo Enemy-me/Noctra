@@ -11,15 +11,16 @@
 
   //@include Padding(margin-top,32px,80px,null,410px);
   margin-top: 60px;
-  margin-bottom: 5.1em;
+  margin-bottom: 90px;
+
+  @include mobile(768px)
+  {
+    margin-bottom: 50px;
+  }
 
 
   @include media(1280px) {
     margin-top: 30px;
-  }
-
-  @include media(430px) {
-    margin-top: 15px;
   }
 
 
@@ -40,7 +41,7 @@
     }
 
     @include media(1050px) {
-      font-size: 16px;
+      font-size: 20px;
     }
 
     @include media(768px) {
@@ -50,12 +51,12 @@
 
     &:hover {
       color: var(--color-accent-wine);
-      filter: drop-shadow(0 0 30px var(--color-accent-gold));
+      filter: drop-shadow(0 0 20px var(--color-accent-gold));
     }
 
     &:focus-visible {
       color: var(--color-accent-wine);
-      filter: drop-shadow(0 0 30px var(--color-accent-gold));
+      filter: drop-shadow(0 0 20px var(--color-accent-gold));
     }
 
 
@@ -88,6 +89,8 @@
       background-color: transparent;
       color: var(--color-Ash);
 
+
+
       @include media(1050px) {
 
         display: flex;
@@ -97,12 +100,14 @@
         height: 25px;
       }
 
-      &:active {
-        color: var(--color-Ash);
-      }
 
       @include animation-button;
 
+      &:active {;
+        color: var(--color-Ash);
+
+          filter: drop-shadow(0 0 10px var(--color-accent-gold));
+      }
 
     }
 
@@ -124,16 +129,16 @@
 
       border-radius: var(--border-radius);
 
+      &:hover{
+        @include animation-button;
+      }
+
 
     }
 
 
 
 
-    &:active {
-      background-color: var(--color-accent-wine);
-      color: var(--color-Ash);
-    }
 
 
   }

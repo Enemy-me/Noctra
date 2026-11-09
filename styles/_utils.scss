@@ -35,3 +35,17 @@
       display: inline-block !important; // показываем на экранах меньше 768px
     }
   }
+
+  .Red-Gold{
+    background-color: var(--color-accent-wine);
+    color: var(--color-accent-gold);
+
+    border-radius: var(--border-radius-small);
+  }
+
+  .Gold-Red{
+    background-color: var(--color-accent-gold);
+    color: var(--color-accent-wine);
+
+    border-radius: var(--border-radius-small);
+  }
