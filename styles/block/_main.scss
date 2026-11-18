@@ -195,10 +195,12 @@
     display: grid;
     grid-template-columns: [strokeOne] 1fr [strokeTwo] 1fr;
 
-
     .Services--Item{
       display: grid;
       grid-template-columns: [content] 1fr  [svg] auto;
+
+      @include animation-Card;
+      @include Padding(margin,10px,20px,60px,410px);
 
       max-width: clamp(390px, calc(306.41px + 20.388vw), 650px);
       min-height: 310px;
@@ -210,18 +212,22 @@
       border-radius: var(--border-radius);
 
       border-color: var(--color-accent-gold);
-      @include Padding(margin,10px,20px,60px,410px);
 
     }
 
     .Card--Wrapper{
-      display: flex;
+      display: inline-flex;
       flex-direction: column;
+
+      justify-content: end;
+
     }
+
 
     .Card--Title{
       @include fluid-text(13px,22px);
-      margin-bottom: auto;
+
+      align-self: flex-start;
 
       font-weight: 500;
       line-height: var(--line-height-normal);
@@ -232,15 +238,37 @@
       position: relative;
       margin-top: auto;
 
+
+      transform: translateX(40px);
+
+
+      color: var(--color-Ash);
+
       &::before{
         content: "";
         position: absolute;
 
+        width: 40px;
+        height: 40px;
+
+        left: -15%;
+        top: -40%;
+
         display: block;
+
         background-image: url("/styles/svg/Services--Arrow--1.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
 
       }
 
+    }
+
+    .Card--Image{
+      display: flex;
+      align-items: end;
+      height: 100%;
+      overflow: hidden;
     }
   }
 

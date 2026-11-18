@@ -32,7 +32,7 @@
   --button-height: 68px;
   --transition-duration: 0.2s;
   --Card-bg-dark: #242428;
-  --Card-bg-grey: #DFD6C5;
+  --Card-bg-grey: #1E222B ;
   --paddingCard: 50px;
 }
 
@@ -362,9 +362,9 @@ svg * {
 
 .Card-BG-Grey {
   background-color: var(--Card-bg-grey);
-  box-shadow: -5px 5px 2px 0px var(--color-accent-wine) !important;
+  box-shadow: -5px 5px 2px 0px var(--color-accent-gold) !important;
+  border: 1px solid var(--color-accent-wine) !important;
 }
-
 .Card-BG-Dark {
   background-color: var(--Card-bg-dark);
 }
@@ -692,6 +692,25 @@ svg * {
 .Services--list .Services--Item {
   display: grid;
   grid-template-columns: [content] 1fr [svg] auto;
+  transition-duration: var(--transition-duration);
+}
+@media (hover: hover) {
+  .Services--list .Services--Item:hover {
+    transform: translate(-10px, -10px);
+    transform: scale(1.03);
+    border-color: var(--color-Ash) !important;
+    filter: drop-shadow(0 0 30px var(--color-accent-gold));
+    box-shadow: 0px 0px 0px 0px white !important;
+  }
+}
+.Services--list .Services--Item:active {
+  transform: scale(1.03);
+  border-color: var(--color-Ash) !important;
+  filter: drop-shadow(0 0 30px var(--color-accent-gold));
+  box-shadow: 0px 0px 0px 0px white !important;
+}
+.Services--list .Services--Item {
+  margin: clamp(0.625rem, max(0.9709vw + 0.3762rem, 3.5714vw - 1.9643rem), 3.75rem);
   max-width: clamp(390px, 306.41px + 20.388vw, 650px);
   min-height: 310px;
   border: var(--border);
@@ -699,27 +718,41 @@ svg * {
   padding: var(--paddingCard);
   border-radius: var(--border-radius);
   border-color: var(--color-accent-gold);
-  margin: clamp(0.625rem, max(0.9709vw + 0.3762rem, 3.5714vw - 1.9643rem), 3.75rem);
 }
 .Services--list .Card--Wrapper {
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
+  justify-content: end;
 }
 .Services--list .Card--Title {
   font-size: clamp(13px, 9.1683168317px + 0.8910891089vw, 31.9801980198px);
-  margin-bottom: auto;
+  align-self: flex-start;
   font-weight: 500;
   line-height: var(--line-height-normal);
 }
 .Services--list .Card--description {
   position: relative;
   margin-top: auto;
+  transform: translateX(40px);
+  color: var(--color-Ash);
 }
 .Services--list .Card--description::before {
   content: "";
   position: absolute;
+  width: 40px;
+  height: 40px;
+  left: -15%;
+  top: -40%;
   display: block;
   background-image: url("/styles/svg/Services--Arrow--1.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.Services--list .Card--Image {
+  display: flex;
+  align-items: end;
+  height: 100%;
+  overflow: hidden;
 }
 
 /*# sourceMappingURL=styles.css.map */

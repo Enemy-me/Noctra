@@ -33,6 +33,36 @@
   }
 }
 
+@mixin animation-Card{
+
+  transition-duration: var(--transition-duration);
+
+  @media (hover: hover) {
+
+    &:hover{
+
+      transform: translate(-10px, -10px);
+      transform: scale(1.03);
+
+      border-color: var(--color-Ash) !important;
+      filter: drop-shadow(0 0 30px var(--color-accent-gold));
+
+      box-shadow: 0px 0px 0px 0px #FFFF !important;
+    }
+
+  }
+
+  &:active{
+    transform: scale(1.03);
+
+    border-color: var(--color-Ash) !important;
+    filter: drop-shadow(0 0 30px var(--color-accent-gold));
+
+    box-shadow: 0px 0px 0px 0px #FFFF !important;
+  }
+
+}
+
 @mixin reset-button{
   padding: 0;
   background-color: transparent;
