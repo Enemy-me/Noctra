@@ -107,7 +107,6 @@
 
                 </li>
 
-
              </ul>
 
              <button class="Burger_menu visible-mobile" type="button" onclick="MobileOverlay.showModal()">
@@ -193,7 +192,13 @@
                   <span class="accent-text__prefix"> c </span> <span class="accent-text"> Бескомпромиссной  ТОЧНОСТЬЮ.</span>
                </h3>
 
-               <img class="Manifest--Image visible-mobile" fetchpriority="high" src="/images/Manifest.webp" alt="Стоический череп агентства"  width="857">
+               <picture>
+
+                  <source srcset="/images/Manifest_2.webp" media="(min-width: 768px)"  type="image/webp"
+                   >
+
+                  <img class="Manifest--Image visible-mobile" fetchpriority="high" src="/images/Manifest.webp" alt="Стоический череп агентства"  width="857" height="515">
+               </picture>
 
                <p class="Manifest--Content">
                   Мы продвигаем амбициозные бренды. При помощи высокоточного технического SEO и целевых PPC-моделей до продвинутых контент-стратегий — созданных для максимальной отдачи.
@@ -208,7 +213,13 @@
 
             <div class="hidden-mobile">
 
-               <img class="Manifest--Image" fetchpriority="high" src="/images/Manifest.webp" alt="Стоический череп агентства"  width="857" >
+               <picture>
+
+                  <source srcset="/images/Manifest_2.webp"   type="image/webp"
+                          >
+
+                  <img class="Manifest--Image hidden-mobile" fetchpriority="high"   src="/images/Manifest.webp" alt="Стоический череп агентства"  width="857" height="515">
+               </picture>
 
             </div>
 
@@ -351,98 +362,121 @@
 
             <ul class="Services--list">
 
-               <li class="Services--Item">
-                  <div class="Card--Wrapper">
-                     <mark class="Card--Title Gold-Red">
+               <li class="Services--Item Card-BG-Grey">
+                  <article class="Card--Wrapper">
+                     <h3 class="Card--Title Gold-Red">
                         Поисковая Оптимизация <span lang="en"> (SEO) </span>
-                     </mark>
+                    </h3>
 
-                     <p class="Card--description hidden-mobile">Узнать больше</p>
-                  </div>
+                     <a class="Card--description hidden-mobile">Узнать больше</a>
+                  </article>
 
                   <img src="/styles/svg/Services/SEO1.svg"
                        alt="
-                         Поисковая оптимизация Сео»"
-                       class="Card--Image">
+                         "
+                       class="Card--Image"
+                       width="210" height="210"
+                       loading="lazy">
                </li>
 
-               <li class="Services--Item">
-                  <div class="Card--Wrapper">
+               <li class="Services--Item Card-BG-Dark">
+                  <article class="Card--Wrapper">
 
-                     <mark class="Card--Title Red-Gold">
+                    <h3 class="Card--Title Red-Gold">
                         Контекстная реклама
-                     </mark>
+                     </h3>
 
-                     <p class="Card--description hidden-mobile">Узнать больше</p>
-                  </div>
+                     <a class="Card--description hidden-mobile">Узнать больше</a>
+                  </article>
+
 
                   <img src="/styles/svg/Services/Click2.svg"
-                       alt="Контекстная реклама"
-                       class="Card--Image">
+                       alt=""
+                       class="Card--Image"
+                       width="210" height="210"
+                       loading="lazy">
+
                </li>
 
-               <li class="Services--Item">
-                  <div class="Card--Wrapper">
+               <li class="Services--Item Card-BG-Grey">
+                  <article class="Card--Wrapper">
 
-                     <mark class="Card--Title Gold-Red">
+                     <h3  class="Card--Title Gold-Red">
                         Социальные сети и Маркетинг
-                     </mark>
+                     </h3>
 
-                     <p class="Card--description hidden-mobile">Узнать больше</p>
-                  </div>
+                     <a class="Card--description hidden-mobile">Узнать больше</a>
+                  </article>
 
                   <img src="/styles/svg/Services/Social-Media3.svg"
-                       alt="Социальные сети и Маркетинг"
-                       class="Card--Image">
+                       alt=""
+                       class="Card--Image"
+                       width="210" height="210"
+                       loading="lazy">
                </li>
 
-               <li class="Services--Item">
-                  <div class="Card--Wrapper">
-                     <mark class="Card--Title Red-Gold">
+               <li class="Services--Item Gold-Red Card-BG-Dark">
+                  <article class="Card--Wrapper">
+                    <h3 class="Card--Title Red-Gold">
                         Разработка
-                     </mark>
+                     </h3>
 
-                     <p class="Card--description hidden-mobile">Узнать больше</p>
-                  </div>
+                     <a class="Card--description hidden-mobile">Узнать больше</a>
+                  </article>
 
                   <img src="/styles/svg/Services/Coding4.svg"
-                       alt="Разработка"
-                       class="Card--Image">
+                       alt=""
+                       class="Card--Image"
+                       width="210" height="210"
+                       loading="lazy">
                </li>
 
-               <li class="Services--Item">
-                  <div class="Card--Wrapper">
-                     <mark class="Card--Title Gold-Red">
+               <li class="Services--Item Card-BG-Grey">
+                  <article class="Card--Wrapper">
+                    <h3 class="Card--Title Gold-Red">
                         Создание Контента
-                     </mark>
+                     </h3>
 
-                     <p class="Card--description hidden-mobile">Узнать больше</p>
-                  </div>
+                     <a class="Card--description hidden-mobile">Узнать больше</a>
+                  </article>
 
                   <img src="/styles/svg/Services/Content-Creation5.svg"
-                       alt="Создание Контента"
-                       class="Card--Image">
+                       alt=""
+                       class="Card--Image"
+                       width="210" height="210"
+                       loading="lazy">
                </li>
 
-               <li class="Services--Item">
-                  <div class="Card--Wrapper">
-                     <mark class="Card--Title Red-Gold">
+               <li class="Services--Item Card-BG-Dark">
+                  <article class="Card--Wrapper">
+                    <h3  class="Card--Title Red-Gold">
                        Аналитика и Метрики
-                     </mark>
+                     </h3>
 
-                     <p class="Card--description hidden-mobile">Узнать больше</p>
-                  </div>
+                     <a class="Card--description hidden-mobile">Узнать больше</a>
+                  </article>
 
                   <img src="/styles/svg/Services/Analytics6.svg"
-                       alt="Аналитика и Метрики"
-                       class="Card--Image">
+                       alt=""
+                       class="Card--Image"
+                       width="210" height="210"
+                       loading="lazy">
                </li>
 
             </ul>
 
+
+            <div class="Services--property">
+               <h3></h3>
+
+               <img src=""
+                    alt="">
+            </div>
+
          </div>
 
       </section>
+
 
 
 

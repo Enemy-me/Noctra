@@ -21,7 +21,7 @@
 
   // Тени
 
-  --shadow: 0 5px 0 0 var(--color-accent-wine);
+  --shadow: 5px 5px 2px 0 var(--color-accent-wine);
 
   // Шрифты
 
@@ -33,14 +33,22 @@
   --section-padding: 70px;
   --section-bottom: 140px;
 
+
   // Высота
 
   --input-height: 60px;
   --button-height: 68px;
 
-  // Остальное
+  // Анимации
 
   --transition-duration: 0.2s;
+
+  // Карточки
+
+  --Card-bg-dark: #242428;
+  --Card-bg-grey: #DFD6C5;
+
+  --paddingCard: 50px;
 
 
 }

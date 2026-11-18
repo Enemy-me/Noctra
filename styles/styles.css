@@ -23,7 +23,7 @@
   --border-radius: 14px;
   --border-radius-small: 7px;
   --border-radius-card: 45px;
-  --shadow: 0 5px 0 0 var(--color-accent-wine);
+  --shadow: 5px 5px 2px 0 var(--color-accent-wine);
   --font-family-base: "JetBrains Mono", sans-serif;
   --line-height-normal: 1.2;
   --section-padding: 70px;
@@ -31,6 +31,9 @@
   --input-height: 60px;
   --button-height: 68px;
   --transition-duration: 0.2s;
+  --Card-bg-dark: #242428;
+  --Card-bg-grey: #DFD6C5;
+  --paddingCard: 50px;
 }
 
 body {
@@ -78,6 +81,13 @@ a, a:hover {
     transition-duration: var(--transition-duration);
     transform: translateY(-3px);
   }
+}
+.button:active {
+  color: var(--color-accent-wine);
+  filter: drop-shadow(0 0 30px var(--color-accent-gold));
+  background-color: var(--color-accent-gold);
+  transition-duration: var(--transition-duration);
+  transform: translateY(-3px);
 }
 
 h1, h2, h3, h4 {
@@ -350,6 +360,15 @@ svg * {
   border-radius: var(--border-radius-small);
 }
 
+.Card-BG-Grey {
+  background-color: var(--Card-bg-grey);
+  box-shadow: -5px 5px 2px 0px var(--color-accent-wine) !important;
+}
+
+.Card-BG-Dark {
+  background-color: var(--Card-bg-dark);
+}
+
 .Mobile_Overlay {
   width: 100%;
   height: 100%;
@@ -486,10 +505,12 @@ svg * {
     filter: drop-shadow(0 0 30px var(--color-accent-gold));
     background-color: var(--color-accent-gold);
     transition-duration: var(--transition-duration);
+    transform: translateY(-3px);
   }
 }
 .HEADER--Wrapper .Navigation--list .button-price:active {
-  color: var(--color-Ash);
+  color: var(--color-accent-wine);
+  background-color: var(--color-accent-gold);
   filter: drop-shadow(0 0 10px var(--color-accent-gold));
 }
 .HEADER--Wrapper .Navigation--list .Nav-list--item {
@@ -514,9 +535,9 @@ svg * {
     filter: drop-shadow(0 0 30px var(--color-accent-gold));
     background-color: var(--color-accent-gold);
     transition-duration: var(--transition-duration);
+    transform: translateY(-3px);
   }
 }
-
 .Burger_menu {
   padding: 0;
   background-color: transparent;
@@ -644,6 +665,7 @@ svg * {
   max-width: clamp(50rem, -2.941rem + 58.82vw, 68.75rem);
   justify-content: start;
   align-items: center;
+  margin-bottom: clamp(2.5rem, min(4.8544vw + 1.2561rem, 0vw + 5.625rem), 5.625rem);
 }
 @media (max-width: 768px) {
   .Services--Hero {
@@ -663,21 +685,41 @@ svg * {
   font-size: clamp(16px, 12.5940594059px + 0.7920792079vw, 32.8712871287px);
 }
 
-.Services--Content .Card--Title {
-  font-size: clamp(26px, 24.297029703px + 0.396039604vw, 34.4356435644px);
+.Services--list {
+  display: grid;
+  grid-template-columns: [strokeOne] 1fr [strokeTwo] 1fr;
+}
+.Services--list .Services--Item {
+  display: grid;
+  grid-template-columns: [content] 1fr [svg] auto;
+  max-width: clamp(390px, 306.41px + 20.388vw, 650px);
+  min-height: 310px;
+  border: var(--border);
+  box-shadow: var(--shadow);
+  padding: var(--paddingCard);
+  border-radius: var(--border-radius);
+  border-color: var(--color-accent-gold);
+  margin: clamp(0.625rem, max(0.9709vw + 0.3762rem, 3.5714vw - 1.9643rem), 3.75rem);
+}
+.Services--list .Card--Wrapper {
+  display: flex;
+  flex-direction: column;
+}
+.Services--list .Card--Title {
+  font-size: clamp(13px, 9.1683168317px + 0.8910891089vw, 31.9801980198px);
+  margin-bottom: auto;
   font-weight: 500;
   line-height: var(--line-height-normal);
 }
-.Services--Content .Card--description {
+.Services--list .Card--description {
   position: relative;
+  margin-top: auto;
 }
-.Services--Content .Card--description::before {
+.Services--list .Card--description::before {
   content: "";
   position: absolute;
   display: block;
   background-image: url("/styles/svg/Services--Arrow--1.svg");
-  /*   height: 1.25em;
-     width: 1.25em;*/
 }
 
 /*# sourceMappingURL=styles.css.map */

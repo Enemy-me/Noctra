@@ -49,3 +49,12 @@
 
     border-radius: var(--border-radius-small);
   }
+
+  .Card-BG-Grey{
+    background-color: var(--Card-bg-grey);
+    box-shadow: -5px 5px 2px 0px var(--color-accent-wine) !important;
+  }
+
+  .Card-BG-Dark{
+    background-color: var(--Card-bg-dark);
+  }

@@ -27,8 +27,9 @@
   .HEADER--Logo {
 
     @include fluid-text(16.36px, 28px, 1440);
-    //@include Padding(margin-right, 32px, 208px, 280px, 410px);
+    //@include Padding(margin-right, 32px, 200px, 280px, 410px);
     margin-right: auto;
+
 
     color: var(--color-accent-gold);
 
@@ -65,6 +66,7 @@
   .Navigation--list {
     display: flex;
     align-items: center;
+
 
 
     @include fluid-text(16px, 20px);
@@ -104,7 +106,8 @@
       @include animation-button;
 
       &:active {;
-        color: var(--color-Ash);
+        color: var(--color-accent-wine);
+        background-color: var(--color-accent-gold);
 
           filter: drop-shadow(0 0 10px var(--color-accent-gold));
       }

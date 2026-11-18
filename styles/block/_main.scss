@@ -89,13 +89,16 @@
         height: 50px;
       }
 
-      &:active {
-        transition-duration: var(--transition-duration);
 
-         color: currentColor;
+
+        &:active {
+          transition-duration: var(--transition-duration);
+
+          color: currentColor;
           filter: drop-shadow(0 0 20px var(--color-accent-gold));
 
-      }
+        }
+
 
       @include mobile(768px){
         width: 100%;
@@ -160,6 +163,8 @@
     justify-content: start;
     align-items: center;
 
+    @include Padding(margin-bottom,40px,90px,null,410px);
+
     @include mobile(768px)
     {
       flex-direction: column;
@@ -181,20 +186,51 @@
     }
 
 
+
   }
 
 
-  .Services--Content{
+  .Services--list{
+
+    display: grid;
+    grid-template-columns: [strokeOne] 1fr [strokeTwo] 1fr;
+
+
+    .Services--Item{
+      display: grid;
+      grid-template-columns: [content] 1fr  [svg] auto;
+
+      max-width: clamp(390px, calc(306.41px + 20.388vw), 650px);
+      min-height: 310px;
+
+      border: var(--border);
+      box-shadow: var(--shadow);
+
+      padding: var(--paddingCard);
+      border-radius: var(--border-radius);
+
+      border-color: var(--color-accent-gold);
+      @include Padding(margin,10px,20px,60px,410px);
+
+    }
+
+    .Card--Wrapper{
+      display: flex;
+      flex-direction: column;
+    }
 
     .Card--Title{
-      @include fluid-text(26px,30px);
+      @include fluid-text(13px,22px);
+      margin-bottom: auto;
 
       font-weight: 500;
       line-height: var(--line-height-normal);
+
     }
 
     .Card--description{
       position: relative;
+      margin-top: auto;
 
       &::before{
         content: "";
@@ -202,9 +238,6 @@
 
         display: block;
         background-image: url("/styles/svg/Services--Arrow--1.svg");
-
-     /*   height: 1.25em;
-        width: 1.25em;*/
 
       }
 

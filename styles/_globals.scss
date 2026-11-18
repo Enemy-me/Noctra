@@ -3,6 +3,7 @@
 
 body{
 
+
   font-family: var(--font-family-base);
   font-weight: 400;
 
@@ -31,7 +32,6 @@ p{
   line-height: 1.2;
 }
 
-
 a,button,input,textarea,svg *{
   transition-duration: var(--transition-duration);
 }
@@ -48,31 +48,26 @@ a{
    background-color: var(--color-accent-gold);
    cursor: pointer;
 
-
-
    padding:
       clamp(15px, 0.5122cqw + 12.6341px, 20px)
       clamp(18px, 1.0976cqw + 19.9024px, 35px);
 
 
-  @media (hover: hover) {
+  @include animation-button
+  {
+    color: var(--color-accent-wine);
+    filter: drop-shadow(0 0 30px var(--color-accent-gold));
 
-    &:hover {
-      color: var(--color-accent-wine);
-      filter: drop-shadow(0 0 30px var(--color-accent-gold));
+    background-color: var(--color-accent-gold);
+    transition-duration: var(--transition-duration);
 
-      background-color: var(--color-accent-gold);
-      transition-duration: var(--transition-duration);
+    transform: translateY(-3px);
+  };
 
-      transform: translateY(-3px);
-
-    }
-
-
-
-  }
 
 }
+
+
 
 
 h1,h2,h3,h4{

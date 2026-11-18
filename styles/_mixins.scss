@@ -22,8 +22,14 @@
       background-color: var(--color-accent-gold);
       transition-duration: var(--transition-duration);
 
+      transform: translateY(-3px);
+
     }
 
+  }
+
+  &:active{
+    @content
   }
 }
 
@@ -56,3 +62,4 @@
   width: $size;
   aspect-ratio: 1;
 }
+
